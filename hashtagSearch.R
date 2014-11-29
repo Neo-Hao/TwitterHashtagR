@@ -1,3 +1,6 @@
+# in case this package was not loaded in authentication script
+install.packages("twitteR")
+
 # collect tweets by hashtag and save result in a csv file
 ## input: hastag -- character, numberOfTweets -- numeric, nameOfFile -- character
 ## output: a csv file in the working directory
