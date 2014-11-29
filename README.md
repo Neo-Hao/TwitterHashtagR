@@ -13,7 +13,7 @@ This small project aims at helping researchers who are working on SNS and learni
 2. Create a new application on https://apps.twitter.com (you need a Twitter account first)
 2. Save the consumer key and consumer secret for future use.
 3. Run the code in <strong>Authentication.R</strong>
-4. Type in the Console the function named connectRegistr. Provide the needed parameters to the function, including consumer Key, consumer Secret, and the folder location you desired to save the authentication token. An example is as: connectRegistr('consumer key', 'consumer secret', '~/R'). On PC, the same example should be as connectRegistr('consumer key', 'consumer secret', 'D:\\R\\')
+4. Type in the Console the function named <strong>connectRegistr</strong>. Provide the needed parameters to the function, including consumer Key, consumer Secret, and the folder location you desired to save the authentication token. An example is as: connectRegistr('consumer key', 'consumer secret', '~/R'). On PC, the same example should be as connectRegistr('consumer key', 'consumer secret', 'D:\\R\\')
 
 <h3>Collect data in past</h3>
 
