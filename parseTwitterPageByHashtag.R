@@ -12,7 +12,7 @@ trim <- function (x) {
 # save the clean data in a csv file in the working directory
 # input: fileLocation -- character, nameOfFile -- character
 # output: a csv file in the working directory
-getData <- function(fileName, nameOfFile) {
+getData <- function(fileName, outputFileName) {
   fileUrl <- fileName
   doc <- htmlTreeParse(fileUrl, useInternal= TRUE)
   # get screen name
@@ -46,6 +46,6 @@ getData <- function(fileName, nameOfFile) {
   data <- data.frame(name.screen, name.username, tweets.messyContent, tweets.content, tweets.hasPicture, tweets.hasSuperLink, tweets.count, tweets.time, tweets.retweetCount, tweets.favorCount)
   
   # write the result into csv file
-  filename <- paste(nameOfFile, "csv", sep=".")
+  filename <- paste(outputFileName, "csv", sep=".")
   write.csv(data, file = filename)
 }
