@@ -1,10 +1,13 @@
+# load necessary packages
+install.packages("ROAuth")
+library(ROAuth)
+install.packages("twitteR")
+library(twitteR)
+
 # Connect R to Twitter
 ## input: consumer key & consumer secret
 ## output: authentication object for registeration use
 my_oauth <- function(consumerKey, consumerSecret) {
-  # load necessary packages
-  install.packages("ROAuth")
-  library(ROAuth)
   
   # prepare for authentication
   requestURL <- "https://api.twitter.com/oauth/request_token"
@@ -29,9 +32,6 @@ my_oauth <- function(consumerKey, consumerSecret) {
 ## input: oauthentication object, desired folder location
 ## output: oauthentication token
 register <- function(my_oauth, folder_location) {
-  # load necessary packages
-  install.packages("twitteR")
-  library(twitteR)
   # register
   registerTwitterOAuth(my_oauth)
   ### save the authentication for future use
