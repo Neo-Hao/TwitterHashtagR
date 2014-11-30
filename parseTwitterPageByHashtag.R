@@ -12,8 +12,8 @@ trim <- function (x) {
 # save the clean data in a csv file in the working directory
 # input: hashtag -- character, fileLocation -- character, nameOfFile -- character
 # output: a csv file in the working directory
-getData <- function(hashtag, fileName, outputFileName) {
-  fileUrl <- fileName
+getData <- function(hashtag, inputFileName, outputFileName) {
+  fileUrl <- inputFileName
   doc <- htmlTreeParse(fileUrl, useInternal= TRUE)
   # get screen name
   name.screen <- xpathSApply(doc, "//strong[@class='fullname js-action-profile-name show-popup-with-id']", xmlValue)
