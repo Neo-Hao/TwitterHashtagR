@@ -15,7 +15,7 @@ This small project aims at helping researchers who are working on SNS and learni
 3. Run the code in <strong>Authentication.R</strong>
 4. Type in the Console the function named <strong>connectRegistr</strong>. Provide the needed parameters to the function, including consumer Key, consumer Secret, and the folder location you desired to save the authentication token. An example is as: connectRegistr('consumer key', 'consumer secret', '~/R'). On PC, the same example should be as connectRegistr('consumer key', 'consumer secret', 'D:\\R\\')
 
-<h3>Collect data in past</h3>
+<h3>Collect data from the past</h3>
 
 Twitter API limits data collection using hashtag from what happened before. If you have to collect full data in the past, you may consider doing the following things.
 
