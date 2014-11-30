@@ -12,7 +12,7 @@ trim <- function (x) {
 # save the clean data in a csv file in the working directory
 # input: fileLocation -- character, nameOfFile -- character
 # output: a csv file in the working directory
-getData <- function(fileName, outputFileName) {
+getData <- function(hashtag, fileName, outputFileName) {
   fileUrl <- fileName
   doc <- htmlTreeParse(fileUrl, useInternal= TRUE)
   # get screen name
@@ -29,7 +29,7 @@ getData <- function(fileName, outputFileName) {
   ## get of the searched hashtag
   reg <- "([a-zA-Z0-9]+://)?([a-zA-Z0-9_]+:[a-zA-Z0-9_]+@)?([a-zA-Z0-9.-]+\\.[A-Za-z]{2,4})(:[0-9]+)?(/.*)?"
   tweets.content <- gsub(pattern = reg, replacement = "", tweets.messyContent, ignore.case = T)
-  tweets.content <- gsub(pattern = "#mayedit2000", replacement = "", tweets.content, ignore.case = T)
+  tweets.content <- gsub(pattern = hashtag, replacement = "", tweets.content, ignore.case = T)
   # trim white space
   tweets.content <- lapply(tweets.content, function(x) trim(x))
   tweets.content <- unlist(tweets.content)
