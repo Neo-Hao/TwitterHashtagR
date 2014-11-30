@@ -10,7 +10,7 @@ trim <- function (x) {
 }
 
 # save the clean data in a csv file in the working directory
-# input: fileLocation -- character, nameOfFile -- character
+# input: hashtag -- character, fileLocation -- character, nameOfFile -- character
 # output: a csv file in the working directory
 getData <- function(hashtag, fileName, outputFileName) {
   fileUrl <- fileName
