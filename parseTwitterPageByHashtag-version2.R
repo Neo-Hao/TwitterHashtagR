@@ -17,8 +17,6 @@ getData <- function(hashtag, inputFileName, outputFileName) {
   doc <- htmlTreeParse(fileUrl, useInternal= TRUE)
   # get screen name
   name.screen <- xpathSApply(doc, "//strong[@class='fullname js-action-profile-name show-popup-with-id']", xmlValue)
-  # get the userID
-  name.username <- xpathSApply(doc, "//span[@class='username js-action-profile-name']", xmlValue)
   # get the unchanged tweet content
   tweets.messyContent <- xpathSApply(doc, "//p[@class='js-tweet-text tweet-text']", xmlValue)
   # check whether the tweet content contains url or picture
