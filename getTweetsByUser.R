@@ -15,6 +15,12 @@ tweetCollectByUser <- function(username, numberOfTweets, nameOfFile) {
   
   # convert searchtwitter research into dataframe
   tweets <- twListToDF(tweets)
+  
+  # optional data cleaning
+  # if you want full results, please don't run the code in this section
+  tweets <- subset(tweets, is.na(tweets$replyToSN))
+  tweets <- data.frame(tweets$screenName, tweets$text, tweets$favoriteCount, tweets$retweetCount)
+  
   # write the result into csv file
   filename <- paste(nameOfFile, "csv", sep=".")
   write.csv(tweets, file = filename)
