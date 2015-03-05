@@ -1,9 +1,9 @@
 # collect tweets by username and save result in a csv file
-## input: hastag -- character, numberOfTweets -- numeric, nameOfFile -- character
+## input: username, number Of Tweets, name Of File, filterString
 ## output: a csv file in the working directory
-tweetCollectByUser <- function(username, numberOfTweets, nameOfFile) {
+tweetCollectByUser <- function(username, numberOfTweets, nameOfFile, filterString = NULL) {
   # get tweets of a user
-  tweets <- userTimeline(username, numberOfTweets)
+  tweets <- userTimeline(username, numberOfTweets, filterString)
   
   # convert searchtwitter research into dataframe
   tweets <- twListToDF(tweets)
@@ -15,7 +15,14 @@ tweetCollectByUser <- function(username, numberOfTweets, nameOfFile) {
   tweets <- subset(tweets, is.na(tweets$replyToSN))
   tweets <- data.frame(tweets$screenName, tweets$text, tweets$favoriteCount, tweets$retweetCount)
   
+  # optional filter: if the tweet text contrains filterString, true; else false
+  tweets$flag <- grepl(filterString, tweets$tweets.text)
+  
+  # optional data subset
+  tweets <- tweets[which(tweets$flag == TRUE),]
+  
   # write the result into csv file
   filename <- paste(nameOfFile, "csv", sep=".")
   write.csv(tweets, file = filename)
 }
+
