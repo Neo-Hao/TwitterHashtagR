@@ -1,6 +1,3 @@
-# in case this package was not loaded in authentication script
-install.packages("twitteR")
-
 # collect tweets by username and save result in a csv file
 ## input: hastag -- character, numberOfTweets -- numeric, nameOfFile -- character
 ## output: a csv file in the working directory
@@ -10,6 +7,8 @@ tweetCollectByUser <- function(username, numberOfTweets, nameOfFile) {
   
   # convert searchtwitter research into dataframe
   tweets <- twListToDF(tweets)
+  # get rid of stupid emoticons
+  tweets$text <- sapply(tweets$text,function(row) iconv(row, "latin1", "ASCII", sub=""))
   
   # optional data cleaning
   # if you want full results, please don't run the code in this section
