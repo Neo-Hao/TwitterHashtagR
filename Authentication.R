@@ -1,39 +1,25 @@
+# TwitterR was updated recently, which cause the change in authentication method
+# the following works with the latest version of TwitterR
+
 # load necessary packages
 install.packages("ROAuth")
 library(ROAuth)
 install.packages("twitteR")
 library(twitteR)
+install.packages("httpuv")
+library(httpuv)
 
-# Connect R to Twitter
-## input: consumer key & consumer secret
-## output: authentication object for registeration use
-my_oauth <- function(consumerKey, consumerSecret) {
-  
-  # prepare for authentication
-  requestURL <- "https://api.twitter.com/oauth/request_token"
-  accessURL <- "https://api.twitter.com/oauth/access_token"
-  authURL <- "https://api.twitter.com/oauth/authorize"
-  my_oauth <- OAuthFactory$new(consumerKey=consumerKey,
-                               consumerSecret=consumerSecret, requestURL=requestURL,
-                               accessURL=accessURL, authURL=authURL)
-  
-  # authenticate in either unix or windows
-  if(.Platform$OS.type == "unix") {
-    my_oauth$handshake()
-  } else {
-    my_oauth$handshake(cainfo = system.file("CurlSSL", "cacert.pem", package = "RCurl"))
-  }
-  
-  # return my_oauth object
-  my_oauth
-}
+# consumer key and secret come from twitter
+# remember to set callback URL of your twitter app as http://127.0.0.1:1410
+# change the key and secret by the info of your twitter app
+consumer_key <- "xxxxx"
+consumer_secret <- "xxxxx"
 
-# save registeration info to avoid repeating the above steps
-## input: oauthentication object, desired folder location
-## output: oauthentication token
-register <- function(my_oauth, folder_location) {
+# register function
+# input: consumer_key, consumer_secret, folder_location
+register <- function(consumer_key, consumer_secret, folder_location) {
   # register
-  registerTwitterOAuth(my_oauth)
+  setup_twitter_oauth(consumer_key, consumer_secret)
   ### save the authentication for future use
   ## Setting working folder
   # From windows machine in lab computer:
@@ -42,12 +28,4 @@ register <- function(my_oauth, folder_location) {
   setwd(folder_location)
   # save the authentication token
   save(my_oauth, file="my_oauth")
-}
-
-# connect and register
-## input: consumer key & consumer secret, and desired folder location
-connectRegistr <- function(consumerKey, consumerSecret, folder_location) {
-  oauth <- my_oauth(consumerKey, consumerSecret)
-  # fill folder location before running it
-  register(oauth, folder_location)
 }
