@@ -5,11 +5,6 @@ install.packages("twitteR")
 ## input: hastag -- character, numberOfTweets -- numeric, nameOfFile -- character
 ## output: a csv file in the working directory
 tweetCollectByUser <- function(username, numberOfTweets, nameOfFile) {
-  # load library and OAuth
-  library(twitteR)
-  load("my_oauth")
-  registerTwitterOAuth(my_oauth)
-  
   # get tweets of a user
   tweets <- userTimeline(username, numberOfTweets)
   
