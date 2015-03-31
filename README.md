@@ -29,7 +29,7 @@ Twitter API limits data collection using hashtag from what happened before. If y
 
 <h3>Collect data in future</h3>
 
-If you plan carefully, you can collect the data by hashtag from what will happen in future in an easier way (e.g., some learning activity on Twitter). Please note that this method works only for small scale study.
+If you plan carefully, you can collect the data by hashtag from what will happen in future in an easier way (e.g., some learning activity on Twitter). Please note that this method works only for small scale studies. You may go through the following steps one time per week as the online activities go on.
 
 1. Run the code in <strong>hashtagSearch.R</strong>
 2. Type in the Console the function named <strong>tweetCollect</strong>. Provide the needed parameters to the function, including the hashtag you would like to collect data by, number of tweets you would like to collect, and the name of output csv file. An example is as: tweetCollect('#edit2000', 300, 'tweets'). On PC, the same example should be as tweetCollect('#edit2000', 300,  'tweets')
