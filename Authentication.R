@@ -8,7 +8,6 @@ install.packages("twitteR")
 library(twitteR)
 
 # consumer key and secret come from twitter
-# remember to set callback URL of your twitter app as http://127.0.0.1:1410
 # change the key and secret by the info of your twitter app
 consumer_key <- "xxxxx"
 consumer_secret <- "xxxxx"
