@@ -1,15 +1,10 @@
 # in case this package was not loaded in authentication script
-install.packages("twitteR")
+library("twitteR")
 
 # collect tweets by hashtag and save result in a csv file
 ## input: hastag -- character, numberOfTweets -- numeric, nameOfFile -- character
 ## output: a csv file in the working directory
 tweetCollect <- function(hashtag, numberOfTweets, nameOfFile) {
-  # load library and OAuth
-  library(twitteR)
-  load("my_oauth")
-  registerTwitterOAuth(my_oauth)
-  
   # search tweets by hashtag
   if(.Platform$OS.type == "unix") {
     tweets <- searchTwitter(hashtag, n = numberOfTweets)
