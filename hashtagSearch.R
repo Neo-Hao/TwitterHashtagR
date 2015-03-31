@@ -6,11 +6,13 @@ library("twitteR")
 ## output: a csv file in the working directory
 tweetCollect <- function(hashtag, numberOfTweets, nameOfFile) {
   # search tweets by hashtag
-  if(.Platform$OS.type == "unix") {
-    tweets <- searchTwitter(hashtag, n = numberOfTweets)
-  } else {
-    tweets <- searchTwitter(hashtag, n = numberOfTweets, cainfo = system.file("CurlSSL", "cacert.pem", package = "RCurl"))
-  }
+  tweets <- searchTwitter(hashtag, n = numberOfTweets)
+#   # search tweets by hashtag/ This part no longer works
+#   if(.Platform$OS.type == "unix") {
+#     tweets <- searchTwitter(hashtag, n = numberOfTweets)
+#   } else {
+#     tweets <- searchTwitter(hashtag, n = numberOfTweets, cainfo = system.file("CurlSSL", "cacert.pem", package = "RCurl"))
+#   }
   
   # convert searchtwitter research into dataframe
   tweets <- twListToDF(tweets)
