@@ -12,8 +12,7 @@ This small project aims at helping researchers who are working on SNS and learni
 1. Install R (http://www.r-project.org; if you are on a PC, you may want to install R studio (http://www.rstudio.com) too)
 2. Create a new application on https://apps.twitter.com (you need a Twitter account first). Remember to set the Callback URL as http://127.0.0.1:1410 when creating the application.
 3. Save the consumer key and consumer secret for future use.
-4. Run the code in <strong>Authentication.R</strong>
-5. Type in the Console the function named <strong>connectRegistr</strong>. Provide the needed parameters to the function, including consumer Key, consumer Secret, and the folder location you desired to save the authentication token. An example is as: connectRegistr('consumer key', 'consumer secret', '~/R'). On PC, the same example should be as connectRegistr('consumer key', 'consumer secret', 'D:\\R\\')
+4. Run the code in <strong>Authentication.R</strong>; please remember to replace "xxxxx" with your own consumer key and secrets.
 
 <h3>Collect data from the past</h3>
 
