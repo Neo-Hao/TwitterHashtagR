@@ -22,8 +22,8 @@ Twitter API limits data collection using hashtag from what happened before. If y
 1. Search the hashtage on Twitter, and scroll down untill all tweets are loaded on that webpage.
 2. Save the webpage as html file on your local drive, and put it in the working directory of R
 3. Run the code in <strong>parseTwitterPageByHashtag.R</strong>
-4. Type in the Console the function named <strong>getData</strong>. Provide the needed parameters to the function, including the hastag, the file name of the html file you just saved, and the name of output csv file. An example is as: getData('#mayedit2000', 'tweets.html', 'cleanTotalTweets').
-Note: <i>If the codes in <strong>parseTwitterPageByHashtag.R</strong> don't run or give you errors, please try the codes in <strong>parseTwitterPageByHashtag-version2.R</strong></i>. The steps are exactly the same as above.
+4. Type in the Console the function named <strong>getData</strong>. Provide the needed parameters to the function, including the hastag, the file name of the html file you just saved, and the name of output csv file. An example is as: getData('#mayedit2000', 'tweets.html', 'cleanTotalTweets').<br>
+<strong>Note</strong>: <i>If the codes in <strong>parseTwitterPageByHashtag.R</strong> don't run or give you errors, please try the codes in <strong>parseTwitterPageByHashtag-version2.R</strong></i>. The steps are exactly the same as above.
 
 
 <h3>Collect data in future</h3>
