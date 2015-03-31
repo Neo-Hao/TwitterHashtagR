@@ -26,3 +26,5 @@ register <- function(consumer_key, consumer_secret) {
   # save the authentication token
   # save(my_oauth, file="my_oauth")
 }
+
+register(consumer_key, consumer_secret)
