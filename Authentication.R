@@ -6,8 +6,6 @@ install.packages("ROAuth")
 library(ROAuth)
 install.packages("twitteR")
 library(twitteR)
-install.packages("httpuv")
-library(httpuv)
 
 # consumer key and secret come from twitter
 # remember to set callback URL of your twitter app as http://127.0.0.1:1410
@@ -16,8 +14,8 @@ consumer_key <- "xxxxx"
 consumer_secret <- "xxxxx"
 
 # register function
-# input: consumer_key, consumer_secret, folder_location
-register <- function(consumer_key, consumer_secret, folder_location) {
+# input: consumer_key, consumer_secret
+register <- function(consumer_key, consumer_secret) {
   # register
   setup_twitter_oauth(consumer_key, consumer_secret)
   ### save the authentication for future use
@@ -25,7 +23,7 @@ register <- function(consumer_key, consumer_secret, folder_location) {
   # From windows machine in lab computer:
   # setwd("D:\\R\\")
   # From Mac computer, something like ~/Dropbox/
-  setwd(folder_location)
+  # setwd(folder_location)
   # save the authentication token
-  save(my_oauth, file="my_oauth")
+  # save(my_oauth, file="my_oauth")
 }
