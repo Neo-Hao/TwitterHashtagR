@@ -3,7 +3,15 @@ library(tm)
 install.packages("stringr")
 library(stringr)
 
-# convert text vector into a term-Document Matrix
+# convert a specified column in csv file to a vector
+vectorConvertor <- function(fileName, whetherHeader, columnName) {
+  data <- read.csv(fileName, header = whetherHeader)
+  data <- data$columnName
+  data <- as.vector(data)
+  return (data)
+}
+
+# convert text vector to a term-Document Matrix
 # parameter: text vector
 # return term-Document Matrix
 termDocumentMatrixConverter <- function(data) {
