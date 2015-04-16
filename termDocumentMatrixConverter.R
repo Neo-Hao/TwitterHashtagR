@@ -4,10 +4,10 @@ install.packages("stringr")
 library(stringr)
 
 # convert a specified column in csv file to a vector
-vectorConvertor <- function(filename, whetherHeader, columnName) {
+vectorConvertor <- function(filename, whetherHeader) {
   filename <- paste(filename, "csv", sep=".")
   data <- read.csv(filename, whetherHeader)
-  data <- data$columnName
+  data <- data$text
   data <- as.vector(data)
 }
 
