@@ -4,11 +4,11 @@ install.packages("stringr")
 library(stringr)
 
 # convert a specified column in csv file to a vector
-vectorConvertor <- function(fileName, whetherHeader, columnName) {
-  data <- read.csv(fileName, header = whetherHeader)
+vectorConvertor <- function(filename, whetherHeader, columnName) {
+  filename <- paste(filename, "csv", sep=".")
+  data <- read.csv(filename, whetherHeader)
   data <- data$columnName
   data <- as.vector(data)
-  return (data)
 }
 
 # convert text vector to a term-Document Matrix
