@@ -13,8 +13,8 @@ vectorConvertor <- function(filename, whetherHeader) {
 
 # convert text vector to a term-Document Matrix
 # parameter: text vector
-# return term-Document Matrix
-termDocumentMatrixConverter <- function(data) {
+# return PlainTextDocument
+plainTextDocumentConverter <- function(data) {
   # remove non utf-8 characters
   data <- str_replace_all(data,"[^[:graph:]]", " ")
   # convert data to corpus
@@ -27,6 +27,9 @@ termDocumentMatrixConverter <- function(data) {
   data <- tm_map(data, function(x) removeWords(x, stopwords()))
   # make sure the data is PlainTextDocument 
   data <- tm_map(data, PlainTextDocument)
-  data <- TermDocumentMatrix(data)
   return(data)
 }
+
+# data <- vectorConvertor("edutech", TRUE)
+# data <- plainTextDocumentConverter(data)
+# data.tm <- TermDocumentMatrix(data)
