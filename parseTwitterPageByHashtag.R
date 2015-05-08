@@ -4,6 +4,7 @@ install.packages("XML")
 library(XML)
 library(stringr)
 
+
 # trim the while leading and tailing space
 trim <- function (x) {
   gsub("^\\s+|\\s+$", "", x)
