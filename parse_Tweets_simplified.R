@@ -32,5 +32,5 @@ getData <- function(hashtag, inputFileName, outputFileName) {
   names(data) <- c("Messy text", "text")
   
   # write the result into csv file
-  write.csv(data, file = filename)
+  write.csv(data, file = outputFileName)
 }
