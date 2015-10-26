@@ -20,3 +20,5 @@ tweetCollectByUser <- function(username, numberOfTweets, nameOfFile) {
   write.csv(tweets, file = filename)
 }
 
+# sample application of functions
+tweetCollectByUser("aace", 300, "tweetsOfAACE")

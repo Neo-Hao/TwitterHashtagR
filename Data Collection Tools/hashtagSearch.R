@@ -1,6 +1,3 @@
-# in case this package was not loaded in authentication script
-library("twitteR")
-
 # collect tweets by hashtag and save result in a csv file
 ## input: hastag -- character, numberOfTweets -- numeric, nameOfFile -- character
 ## output: a csv file in the working directory
@@ -20,3 +17,6 @@ tweetCollect <- function(hashtag, numberOfTweets, nameOfFile) {
   filename <- paste(nameOfFile, "csv", sep=".")
   write.csv(tweets, file = filename)
 }
+
+# sample application of functions
+tweetCollect("#AECT15", 100, "aect")

@@ -2,10 +2,22 @@
 # the following works with the latest version of TwitterR
 
 # load necessary packages
-install.packages("ROAuth")
-library(ROAuth)
-install.packages("twitteR")
-library(twitteR)
+if (require(ROAuth) == FALSE) {
+  install.packages("ROAuth")
+  library(ROAuth)
+}
+if (require(twitteR) == FALSE) {
+  install.packages("twitteR")
+  library(twitteR)
+}
+if (require(base64enc) == FALSE) {
+  install.packages("base64enc")
+  library(base64enc)
+}
+if (require(httpuv) == FALSE) {
+  install.packages("httpuv")
+  library(httpuv)
+}
 
 # consumer key and secret come from twitter
 # change the key and secret by the info of your twitter app
