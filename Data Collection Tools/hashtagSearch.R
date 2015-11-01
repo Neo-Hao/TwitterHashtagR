@@ -19,4 +19,4 @@ tweetCollect <- function(hashtag, numberOfTweets, nameOfFile) {
 }
 
 # sample application of functions
-tweetCollect("#AECT15", 100, "aect")
+tweetCollect("#sarcastic", 100, "sarcastic")
