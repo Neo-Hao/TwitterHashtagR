@@ -28,6 +28,5 @@ usersInfo <- function(usernames, nameOfFile) {
 
 # sample application of functions
 userInfo("aect")
-
 usernames <- c("aect", "AERA_EdResearch", "siteconf")
 usersInfo(usernames, "three_conferences")

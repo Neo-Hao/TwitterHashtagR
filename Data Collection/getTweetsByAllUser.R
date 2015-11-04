@@ -39,15 +39,17 @@ tweetCollectByUser <- function(username, numberOfTweets, saveAsCSV = FALSE, filt
 # collect tweets of several users
 ## input: inputFileName, outputFileName, filterString
 ### inputFileName --- a file generated from function usersInfo in collectUsers.R
+### colNumberOfText -- the number of the column that contains texts
+### outputFileName --- the name of output file
 ### filterString (optional): help filter out strings that don't contain specified text
 
 ## output: csv file named as outputFileName 
-tweetCollectByAllUser <- function(inputFileName, outputFileName, filterString = NULL) {
+tweetCollectByAllUser <- function(inputFileName, colNumberOfText, outputFileName, filterString = NULL) {
   # get the vector of usernames
   filename <- paste(inputFileName, "csv", sep=".")
   users <- read.csv(filename, header = T)
   users <- na.omit(users)
-  usernames <- users[,2]
+  usernames <- users[,colNumberOfText]
   
   allTweets <- tweetCollectByUser(usernames[1], 500, FALSE, filterString)
   i = 2
@@ -64,7 +66,4 @@ tweetCollectByAllUser <- function(inputFileName, outputFileName, filterString = 
 # sample application of functions
 usernames <- c("aect", "aace", "siteconf")
 tweetCollectByUser("aace", 300, "tweetsOfAace")
-tweetCollectByAllUser("three_conferences", "test")
-
-
-
+tweetCollectByAllUser("three_conferences", 2, "tweets_three_conferences")

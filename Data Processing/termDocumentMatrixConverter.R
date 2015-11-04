@@ -9,10 +9,9 @@ if (require(stringr) == FALSE) {
 }
 
 # convert a specified column in csv file to a vector
-vectorConvertor <- function(filename, whetherHeader = TRUE) {
-  filename <- paste(filename, "csv", sep=".")
+vectorConvertor <- function(filename, textColNumber, whetherHeader = TRUE) {
   data <- read.csv(filename, whetherHeader)
-  data <- data$text
+  data <- data[,textColNumber]
   data <- as.vector(data)
 }
 
@@ -61,11 +60,6 @@ dataFrameConverter <- function(data, sparse = 0.92, termAsRow = TRUE) {
   return(data.fm)
 }
 
-# sample 1 application of functions
-data <- vectorConvertor("test")
-data <- plainTextDocumentConverter(data)
-data.tm <- TermDocumentMatrix(data)
-
-# sample 2 application of functions
-data <- vectorConvertor("test")
+# sample application of functions
+data <- vectorConvertor("XXX.csv")
 data.fm <- dataFrameConverter(data, 0.92, FALSE)

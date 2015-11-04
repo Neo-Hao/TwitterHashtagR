@@ -54,6 +54,3 @@ sentiment <- function(inputFileName, textColNumber, outputFileName, lexicon = "l
   outputFileName <- paste(outputFileName, "csv", sep=".")
   write.csv(newData, file = outputFileName)
 }
-
-
-sentiment("notes_cleaned.csv", 2, "outputFileName")

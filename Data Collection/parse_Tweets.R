@@ -74,5 +74,5 @@ getData <- function(hashtag, inputFileName, outputFileName) {
 
 
 # sample application of functions
-getData("AECT15", "#aect15 - Twitter Search.html", "test.csv")
+getData("AECT15", "#aect15 - Twitter Search.html", "AECT15.csv")
 

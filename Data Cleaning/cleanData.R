@@ -7,7 +7,7 @@ if (require(stringr) == FALSE) {
 # save the clean data in a csv file in the working directory
 # input: hashtag -- character, fileLocation -- character, nameOfFile -- character
 # output: a csv file in the working directory
-cleanData <- function(hashtag = "", inputFileName, textColNumber, outputFileName) {
+cleanData <- function(inputFileName, textColNumber, outputFileName, hashtag = "") {
   data <- read.csv(inputFileName, header = T)
   data <- data[,textColNumber]
   len <- length(data)
@@ -54,4 +54,4 @@ cleanData <- function(hashtag = "", inputFileName, textColNumber, outputFileName
 }
 
 # sample application
-cleanData("#sacarstic", "data.csv", 2, "test")
+cleanData("sarcastic.csv", 2, "sarcastic_cleaned", "#sacarstic")

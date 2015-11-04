@@ -21,4 +21,4 @@ tweetCollectByUser <- function(username, numberOfTweets, nameOfFile) {
 }
 
 # sample application of functions
-tweetCollectByUser("aace", 300, "tweetsOfAACE")
+tweetCollectByUser("aace", 300, "tweets_AACE")

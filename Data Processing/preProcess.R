@@ -1,5 +1,11 @@
 
 # stop words
+
+## input: inputFileName, textColNumber, outputFileName
+### inputFileName: the text file to be processed
+### textColNumber: the number of column that contains texts
+### outputFileName: the name of output file
+
 removeStopWords <- function(inputFileName, textColNumber, outputFileName, stopWordsFileName = "stopwords.csv") {
   # prepare stop word vector
   stopWords <- read.csv(stopWordsFileName, header = T, colClasses= "character")
@@ -37,8 +43,4 @@ removeStopWords <- function(inputFileName, textColNumber, outputFileName, stopWo
   write.csv(newData, file = outputFileName)
   
 }
-
-
-
-removeStopWords("notes_cleaned.csv", 2, "outputFileName")
 
